@@ -11,11 +11,16 @@ const HomePage = () => {
     if (!authUser) {
       navigate("/login");
     }
-  }, []);
+  }, [authUser, navigate]);
   return (
-    <div className='flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-      <Sidebar />
-      <MessageContainer />
+    <div className='flex flex-col h-screen bg-gray-900 text-white'>
+      <header className='bg-gray-800 shadow-md p-4'>
+        <h1 className='text-3xl font-bold text-purple-400'>BlinkChat</h1>
+      </header>
+      <div className='flex flex-1 overflow-hidden'>
+        <Sidebar />
+        <MessageContainer />
+      </div>
     </div>
   )
 }

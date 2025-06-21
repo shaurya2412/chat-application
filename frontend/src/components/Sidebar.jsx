@@ -39,22 +39,23 @@ const Sidebar = () => {
         }
     }
     return (
-        <div className='border-r border-slate-500 p-4 flex flex-col'>
-            <form onSubmit={searchSubmitHandler} action="" className='flex items-center gap-2'>
+        <div className='w-1/4 bg-gray-800 p-4 flex flex-col'>
+            <form onSubmit={searchSubmitHandler} className='flex items-center gap-2 mb-4'>
                 <input
                     value={search}
                     onChange={(e)=>setSearch(e.target.value)}
-                    className='input input-bordered rounded-md' type="text"
+                    className='input input-bordered rounded-lg w-full bg-gray-700 text-white' type="text"
                     placeholder='Search...'
                 />
-                <button type='submit' className='btn bg-zinc-700 text-white'>
+                <button type='submit' className='btn btn-circle bg-purple-500 text-white'>
                     <BiSearchAlt2 className='w-6 h-6 outline-none'/>
                 </button>
             </form>
-            <div className="divider px-3"></div> 
-            <OtherUsers/> 
-            <div className='mt-2'>
-                <button onClick={logoutHandler} className='btn btn-sm'>Logout</button>
+            <div className="border-t border-gray-700 flex-1 overflow-y-auto">
+                <OtherUsers/>
+            </div>
+            <div className='mt-4'>
+                <button onClick={logoutHandler} className='btn btn-sm btn-outline btn-error w-full'>Logout</button>
             </div>
         </div>
     )
